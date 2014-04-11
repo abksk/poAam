@@ -10,8 +10,8 @@ open(ARGV[0], "r") do |f|
   credit = Hash.new(0)
   f.each do |row|
     strs = row.split(",")
-    all_credits += strs[5].slice(/\d(\.\d)?/).to_i
-    credit[strs[6].slice(/[^\"]\+?/)] += strs[5].slice(/\d(\.\d)?/).to_i
+    all_credits += strs[5].slice(/\d(\.\d)?/).to_f
+    credit[strs[6].slice(/[^\"]\+?/)] += strs[5].slice(/\d(\.\d)?/).to_f
   end
   puts "取得単位数: " + all_credits.to_s
   puts "内訳"
